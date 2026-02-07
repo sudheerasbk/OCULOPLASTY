@@ -5,10 +5,9 @@
   --muted:#475569;
   --line:#dbeafe;
 
---brand:#2563eb;
---success:#16a34a;
---danger:#dc2626;
-
+  --brand:#2563eb;      /* BLUE – primary */
+  --success:#16a34a;    /* GREEN */
+  --danger:#dc2626;     /* RED */
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,Arial;background:var(--bg);color:var(--text)}
