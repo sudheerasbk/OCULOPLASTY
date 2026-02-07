@@ -48,9 +48,40 @@ label{display:block;font-size:13px;color:var(--muted);margin:6px 0}
 input,select,textarea,button{
   width:100%; padding:12px; border-radius:12px; border:1px solid #d1d5db; font-size:16px;
 }
-button{background:var(--brand); color:#fff; border:none; cursor:pointer}
-button.secondary{background:#374151}
-button.ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
+button{
+  background:var(--brand);
+  color:#fff;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* BLUE – primary */
+button.primary{
+  background:var(--brand);
+}
+
+/* GREEN – success */
+button.success{
+  background:var(--success);
+}
+
+/* RED – danger */
+button.danger{
+  background:var(--danger);
+}
+
+/* Neutral */
+button.secondary{
+  background:#475569;
+}
+
+button.ghost{
+  background:#fff;
+  color:var(--text);
+  border:1px solid var(--line);
+}
+
 .row{display:flex; gap:10px; align-items:center; margin-top:10px}
 .row > *{flex:1}
 hr{border:none;border-top:1px solid var(--line);margin:14px 0}
