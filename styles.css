@@ -1,0 +1,58 @@
+:root{
+  --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280;
+  --line:#e5e7eb; --brand:#111827;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,Arial;background:var(--bg);color:var(--text)}
+.topbar{
+  position:sticky; top:0; z-index:10;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 14px; background:var(--card); border-bottom:1px solid var(--line);
+}
+.brand{display:flex; gap:10px; align-items:center}
+.logo{
+  width:36px; height:36px; border-radius:10px; background:var(--brand); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:700;
+}
+.title{font-weight:700}
+.subtitle{font-size:12px;color:var(--muted)}
+.actions button{padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#fff}
+.tabs{
+  display:flex; gap:8px; padding:10px; background:var(--card); border-bottom:1px solid var(--line);
+  overflow:auto;
+}
+.tab{
+  padding:10px 12px; border-radius:999px; border:1px solid var(--line); background:#fff; cursor:pointer;
+  white-space:nowrap;
+}
+.tab.active{background:var(--brand); color:#fff; border-color:var(--brand)}
+.container{max-width:900px;margin:14px auto;padding:0 14px 30px}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  padding:14px; box-shadow:0 1px 2px rgba(0,0,0,.04);
+}
+h2{margin:0 0 10px}
+h3{margin:0 0 8px}
+.muted{color:var(--muted);font-size:13px}
+.grid{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+.span2{grid-column:1 / -1}
+label{display:block;font-size:13px;color:var(--muted);margin:6px 0}
+input,select,textarea,button{
+  width:100%; padding:12px; border-radius:12px; border:1px solid #d1d5db; font-size:16px;
+}
+button{background:var(--brand); color:#fff; border:none; cursor:pointer}
+button.secondary{background:#374151}
+button.ghost{background:#fff;color:var(--text);border:1px solid var(--line)}
+.row{display:flex; gap:10px; align-items:center; margin-top:10px}
+.row > *{flex:1}
+hr{border:none;border-top:1px solid var(--line);margin:14px 0}
+.panel{border:1px dashed var(--line); border-radius:14px; padding:12px; background:#fafafa}
+.list{display:flex; flex-direction:column; gap:8px}
+.item{
+  border:1px solid var(--line); border-radius:12px; padding:10px; background:#fff;
+}
+.item .top{display:flex; justify-content:space-between; gap:10px; align-items:flex-start}
+.badge{font-size:12px; padding:4px 10px; border-radius:999px; background:#eef2ff; color:#3730a3; white-space:nowrap}
+.note{margin-top:10px; padding:10px; border-radius:12px; border:1px solid var(--line); background:#f9fafb}
+.small{font-size:12px;color:var(--muted)}
