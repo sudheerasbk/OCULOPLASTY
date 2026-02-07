@@ -1,6 +1,13 @@
 :root{
-  --bg:#f6f7fb; --card:#fff; --text:#111827; --muted:#6b7280;
-  --line:#e5e7eb; --brand:#111827;
+  --bg:#f4f8ff;          /* light blue background */
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --line:#dbeafe;
+
+  --brand:#2563eb;      /* BLUE – primary */
+  --success:#16a34a;    /* GREEN */
+  --danger:#dc2626;     /* RED */
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,Arial;background:var(--bg);color:var(--text)}
