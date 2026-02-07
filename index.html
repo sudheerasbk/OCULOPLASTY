@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OCULOPLASTY CLINIC</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">OC</div>
+      <div>
+        <div class="title">OCULOPLASTY CLINIC</div>
+        <div class="subtitle" id="subtitle">Clinic staff web app</div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="ghost" id="btnLogout" hidden>Logout</button>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs" hidden>
+    <button data-route="#home" class="tab active">Home</button>
+    <button data-route="#register" class="tab">Register</button>
+    <button data-route="#list" class="tab">Entire List</button>
+    <button data-route="#doctor" class="tab">Doctor</button>
+    <button data-route="#admin" class="tab" id="adminTab" hidden>Admin</button>
+  </nav>
+
+  <main class="container">
+    <!-- AUTH -->
+    <section class="card" id="authView">
+      <h2>Login</h2>
+      <p class="muted">Sign in with email + password.</p>
+
+      <div class="grid">
+        <div>
+          <label>Email</label>
+          <input id="authEmail" type="email" placeholder="name@example.com" />
+        </div>
+        <div>
+          <label>Password</label>
+          <input id="authPassword" type="password" placeholder="••••••••" />
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="btnLogin">Login</button>
+        <button class="secondary" id="btnSignup">Create account</button>
+      </div>
+
+      <div class="note" id="authMsg" hidden></div>
+    </section>
+
+    <!-- HOME -->
+    <section class="card" id="homeView" hidden>
+      <h2>Home</h2>
+
+      <div class="grid">
+        <div class="panel">
+          <h3>Quick Search</h3>
+          <p class="muted">Enter Clinic File Number to see patient + visits.</p>
+          <input id="searchFileNo" placeholder="Clinic File No (e.g., OP-000123)" />
+          <button id="btnSearch">Search</button>
+        </div>
+
+        <div class="panel">
+          <h3>Upcoming Visits (Today + Next 7 days)</h3>
+          <div id="upcomingBox" class="list"></div>
+        </div>
+      </div>
+
+      <div class="panel" id="searchResultPanel" hidden>
+        <h3>Patient Details</h3>
+        <div id="patientDetails"></div>
+        <h4 style="margin-top:10px;">Visits</h4>
+        <div id="patientVisits" class="list"></div>
+      </div>
+    </section>
+
+    <!-- REGISTER PATIENT -->
+    <section class="card" id="registerView" hidden>
+      <h2>Register Patient + Schedule Future Visit</h2>
+
+      <div class="grid">
+        <div>
+          <label>Clinic File No *</label>
+          <input id="pFileNo" placeholder="OP-000123" />
+        </div>
+        <div>
+          <label>Full Name *</label>
+          <input id="pName" placeholder="Patient full name" />
+        </div>
+        <div>
+          <label>Phone</label>
+          <input id="pPhone" placeholder="+94…" />
+        </div>
+        <div>
+          <label>Assigned Doctor</label>
+          <select id="pDoctor"></select>
+        </div>
+        <div class="span2">
+          <label>Notes</label>
+          <textarea id="pNotes" rows="3" placeholder="Optional notes…"></textarea>
+        </div>
+      </div>
+
+      <hr />
+
+      <h3>Schedule Visit</h3>
+      <div class="grid">
+        <div>
+          <label>Visit Date *</label>
+          <input id="vDate" type="date" />
+        </div>
+        <div>
+          <label>Visit Time</label>
+          <input id="vTime" type="time" />
+        </div>
+        <div>
+          <label>Doctor (for this visit)</label>
+          <select id="vDoctor"></select>
+        </div>
+        <div>
+          <label>Purpose</label>
+          <input id="vPurpose" placeholder="Follow-up / Post-op / New…" />
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="btnSavePatientAndVisit">Save Patient + Visit</button>
+        <div class="note" id="regMsg" hidden></div>
+      </div>
+    </section>
+
+    <!-- ENTIRE LIST -->
+    <section class="card" id="listView" hidden>
+      <h2>Entire List</h2>
+
+      <div class="grid">
+        <div>
+          <label>Filter by Doctor</label>
+          <select id="listDoctor"></select>
+        </div>
+        <div>
+          <label>Filter by Date (visits)</label>
+          <input id="listDate" type="date" />
+        </div>
+        <div class="span2">
+          <label>Search (file no / name / phone)</label>
+          <input id="listSearch" placeholder="Type to search…" />
+        </div>
+      </div>
+
+      <div id="listBox" class="list"></div>
+    </section>
+
+    <!-- DOCTOR PROFILE -->
+    <section class="card" id="doctorView" hidden>
+      <h2>Doctor Profile</h2>
+
+      <div class="grid">
+        <div>
+          <label>Select Doctor</label>
+          <select id="doctorSelect"></select>
+        </div>
+        <div>
+          <label>Visit Date</label>
+          <input id="doctorDate" type="date" />
+        </div>
+      </div>
+
+      <div class="panel">
+        <h3>Doctor’s Patient List (Assigned)</h3>
+        <div id="doctorPatients" class="list"></div>
+      </div>
+
+      <div class="panel">
+        <h3>Visits for Selected Date</h3>
+        <div id="doctorVisits" class="list"></div>
+      </div>
+    </section>
+
+    <!-- ADMIN -->
+    <section class="card" id="adminView" hidden>
+      <h2>Admin Panel</h2>
+      <p class="muted">Add doctors (admin only).</p>
+
+      <div class="grid">
+        <div class="span2">
+          <label>Doctor Name</label>
+          <input id="newDoctorName" placeholder="Dr. …" />
+        </div>
+      </div>
+      <div class="row">
+        <button id="btnAddDoctor">Add Doctor</button>
+        <div class="note" id="adminMsg" hidden></div>
+      </div>
+
+      <div class="panel">
+        <h3>Doctors</h3>
+        <div id="doctorListAdmin" class="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
