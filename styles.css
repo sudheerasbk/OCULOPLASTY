@@ -94,3 +94,63 @@ hr{border:none;border-top:1px solid var(--line);margin:14px 0}
 .badge{font-size:12px; padding:4px 10px; border-radius:999px; background:#eef2ff; color:#3730a3; white-space:nowrap}
 .note{margin-top:10px; padding:10px; border-radius:12px; border:1px solid var(--line); background:#f9fafb}
 .small{font-size:12px;color:var(--muted)}
+/* ===== STEP 20 UI UPGRADE ===== */
+
+/* Better header look */
+.topbar{
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+}
+
+/* Make cards feel premium */
+.card{
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.06);
+}
+
+/* Better panels */
+.panel{
+  border: 1px solid var(--line);
+  background: #ffffff;
+}
+
+/* Better tabs */
+.tab{
+  border: 1px solid var(--line);
+  font-weight: 600;
+}
+.tab.active{
+  background: var(--brand);
+  color: #fff;
+}
+
+/* Inputs look more modern */
+input, select, textarea{
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+}
+input:focus, select:focus, textarea:focus{
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* Buttons: nicer */
+button{
+  border-radius: 14px;
+  padding: 12px 14px;
+  box-shadow: 0 6px 14px rgba(2, 6, 23, 0.10);
+}
+button:active{
+  transform: scale(0.99);
+}
+
+/* Colored button styles */
+button.primary{ background: var(--brand); }
+button.success{ background: var(--success); }
+button.danger{ background: var(--danger); }
+
+/* Ghost button refined */
+button.ghost{
+  box-shadow: none;
+}
