@@ -28,11 +28,19 @@ body{margin:0;font-family:system-ui,Arial;background:var(--bg);color:var(--text)
   display:flex; gap:8px; padding:10px; background:var(--card); border-bottom:1px solid var(--line);
   overflow:auto;
 }
+/* Tabs (top buttons) */
 .tab{
-  padding:10px 12px; border-radius:999px; border:1px solid var(--line); background:#fff; cursor:pointer;
-  white-space:nowrap;
+  background:#dbeafe;          /* very mild light blue */
+  color:#1e3a8a;               /* dark blue text so it is visible */
+  border:1px solid #bfdbfe;    /* light blue border */
+  font-weight:700;
 }
-.tab.active{background:var(--brand); color:#fff; border-color:var(--brand)}
+
+.tab.active{
+  background: var(--brand);    /* strong blue */
+  color:#ffffff;               /* white text */
+  border-color: var(--brand);
+}
 .container{max-width:900px;margin:14px auto;padding:0 14px 30px}
 .card{
   background:var(--card); border:1px solid var(--line); border-radius:14px;
