@@ -56,11 +56,11 @@ async function ensureProfile(user){
 
   if(!data){
     await sb.from("profiles").insert({
-      id: user.id,
-      role: "staff",
-      display_name: user.email
-    });
-    myRole = "staff";
+  id: user.id,
+  role: "operator",
+  display_name: user.email
+});
+myRole = "operator";
   } else {
     myRole = data.role || "staff";
   }
